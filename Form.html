@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Mua Bán Hàng</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>🛒 Đơn Hàng Của Bạn</h2>
+
+        <!-- Danh sách sản phẩm -->
+        <form id="orderForm">
+            <div class="product">
+                <label>
+                    <input type="checkbox" class="product-checkbox" data-name="Áo Thun" data-price="150000">
+                    Áo Thun - 150.000đ
+                </label>
+                <input type="number" class="quantity" min="1" value="1" disabled>
+            </div>
+
+            <div class="product">
+                <label>
+                    <input type="checkbox" class="product-checkbox" data-name="Quần Jeans" data-price="250000">
+                    Quần Jeans - 250.000đ
+                </label>
+                <input type="number" class="quantity" min="1" value="1" disabled>
+            </div>
+
+            <div class="product">
+                <label>
+                    <input type="checkbox" class="product-checkbox" data-name="Giày Sneaker" data-price="500000">
+                    Giày Sneaker - 500.000đ
+                </label>
+                <input type="number" class="quantity" min="1" value="1" disabled>
+            </div>
+
+            <!-- Hiển thị tổng tiền -->
+            <p><strong>Tổng tiền:</strong> <span id="totalPrice">0</span>đ</p>
+
+            <!-- Thông tin khách hàng -->
+            <h3>📌 Thông Tin Khách Hàng</h3>
+            <input type="text" id="name" placeholder="Họ và tên" required>
+            <input type="tel" id="phone" placeholder="Số điện thoại" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <textarea id="address" placeholder="Địa chỉ nhận hàng" required></textarea>
+
+            <!-- Phương thức thanh toán -->
+            <h3>💳 Phương Thức Thanh Toán</h3>
+            <select id="paymentMethod">
+                <option value="COD">Thanh toán khi nhận hàng (COD)</option>
+                <option value="bank">Chuyển khoản ngân hàng</option>
+                <option value="online">Thanh toán online</option>
+            </select>
+
+            <!-- Nút đặt hàng -->
+            <button type="submit">Đặt Hàng</button>
+        </form>
+
+        <!-- Hiển thị đơn hàng sau khi đặt -->
+        <div id="orderSummary"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
